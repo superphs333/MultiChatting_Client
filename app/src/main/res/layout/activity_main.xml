@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+1. 맨 처음 입력창에 닉네임 값을 입력하고 접속 버튼 누림
+2. 접속이 되면 접속 환영 문구를 받음
+3. 접속에 완료되면, EditText창의 힌트가 닉네임 -> 메세지로 변경하여 줄 것,
+버튼의 text값을 전송으로 고쳐줌
+-->
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="닉네임"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnMethod"
+            android:text="접속" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_quit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="종료" />
+
+</LinearLayout>
