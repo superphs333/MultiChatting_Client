@@ -459,7 +459,7 @@ public class MainActivity extends AppCompatActivity {
                     등의 정보를 입력하고 출력하는 데 알맞는 클래스
                      */
 
-                // 닉네임을 송신한다
+                // 닉네임을 송신한다!
                 dos.writeUTF(nickName+"§"+room);
                 dos.flush();
                     /*
