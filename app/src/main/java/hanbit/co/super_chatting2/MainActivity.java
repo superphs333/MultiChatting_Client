@@ -436,7 +436,7 @@ public class MainActivity extends AppCompatActivity {
             try{
                 // 접속한다
                 final Socket socket
-                        = new Socket("13.209.234.165",1234);
+                        = new Socket("13.209.234.165",2345);
                 member_socket = socket;
 
                 // 미리 입력했던 닉네임을 서버로 전달한다
@@ -459,7 +459,7 @@ public class MainActivity extends AppCompatActivity {
                     등의 정보를 입력하고 출력하는 데 알맞는 클래스
                      */
 
-                // 닉네임을 송신한다!
+                // 닉네임을 송신한다
                 dos.writeUTF(nickName+"§"+room);
                 dos.flush();
                     /*
@@ -491,6 +491,13 @@ public class MainActivity extends AppCompatActivity {
 
             }catch (Exception e) {
                 e.printStackTrace();
+                Log.d("실행","소켓오류-"+e.getMessage());
+                try {
+                    member_socket.close();
+                } catch (IOException ex) {
+                    Log.d("실행","close오류-"+ex.getMessage());
+                    ex.printStackTrace();
+                }
             }
         }
     }
